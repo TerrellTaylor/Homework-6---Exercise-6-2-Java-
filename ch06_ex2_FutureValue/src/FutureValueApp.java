@@ -60,7 +60,7 @@ public class FutureValueApp {
     public static double getDouble(Scanner sc, String prompt,
             double min, double max) {
         while (true) {
-            double value = getdouble(sc, prompt)
+            double value = getDouble(sc, prompt);
             if (value > min && value < max) {
                 return value;
             } else {
@@ -102,9 +102,11 @@ public class FutureValueApp {
         int months = years * 12;
             
         double futureValue = 0.0;
-        for (int i = 0; i <= months; i++) {
+        for (int i = 0; i < months; i++) {
             futureValue = (futureValue + monthlyInvestment) *
                           (1 + monthlyInterestRate);
+            // System.out.println("Calculating months: " + months);
+            // System.out.println("Calculating future value: " + futureValue);
         }
         return futureValue;
     }
